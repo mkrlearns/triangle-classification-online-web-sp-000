@@ -6,7 +6,7 @@ class Triangle
   end
 
   def kind
-    @sides.each { |side| raise TriangleError if side == 0 || side <= 0 }
+    @sides.each { |side| raise TriangleError if side <= 0 }
     @sides.permutation(3).each do |side|
       raise TriangleError if side[0] + side[1] <= side[2]
     end
